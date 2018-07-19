@@ -1,0 +1,19 @@
+n=int(input())
+ls=list(map(int,input().split()))
+sum1=sum(ls)
+ls.remove(ls[n-1])
+ls.remove(ls[n-2])
+rm_count=2
+while(True):
+	if(len(ls)>1):
+		sum1+=sum(ls)
+		if(len(ls)<=2):
+			ls.remove(ls[n-1-(rm_count)])
+			rm_count+=2
+		else:
+			ls.remove(n-1-ls[(rm_count)])
+			ls.remove(n-2-ls[(rm_count)])
+			rm_count+=2
+	else:
+		print(sum1)
+		exit()
