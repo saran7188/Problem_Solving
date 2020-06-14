@@ -1,0 +1,26 @@
+n=int(input())
+k=n
+l=(n*(n+1))//2
+num=0
+if(l)%2==0:
+	l=l//2
+	ls=[i for i in range(1,n+1)]
+	ls1=[]
+	while(num!=l):
+		if(l-num)<n:
+			ls1.append(l-num)
+			break
+		else:
+			num+=n
+			n-=1
+			ls1.append(n+1)
+	print("YES")
+	print(len(ls1))
+	print(*ls1)
+	print(k-len(ls1))
+	s2=set(ls)-set(ls1)
+	ls2=list(s2)
+	ls2.sort(reverse=True)
+	print(*ls2)
+else:
+	print("NO")
